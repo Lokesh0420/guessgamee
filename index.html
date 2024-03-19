@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <h1 style="font-size: 45px; color: rgb(199, 97, 97); padding-top: 15px;">Number Guessing Game</h1><br>
+        <h2 style="color: white;">Select a number between 1 to 100 and Guess it right!!!</h2><br>
+        <label for="" style="font-size: 25px;color: white;">Guess a Number&nbsp;:&nbsp;</label>
+        <input type="number" placeholder="enter a number" id="num" style="height: 15px; padding: 5px;"><br><br><br>
+        <h2 style="color: black; padding: 4px;"id="res">Try your best!</h2>
+        <br>
+        <h3 style="color: white; font-size: 30px;padding-top: 4px;" >No.of tries:</h3><br>
+        <h3 style="color: white; font-size: 20px;"id="tries">0</h3><br>
+        <input type="submit" value="CHECK" onclick="findnum()" class="b1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="RESET" onclick="window.location.reload()" class="b2">
+    </div>
+    <script>
+        var a=(Math.ceil(Math.random()*100));
+        var count=1;
+        console.log(a);
+        function findnum()
+        {
+            {
+                var b=parseInt(document.getElementById("num").value);
+
+            }
+            if (a == b){
+                document.getElementById("res").textContent="Congratulations!! You gussed it right!";
+            }
+            else if (a >= b){
+                document.getElementById("res").textContent="Guess a greater number!";
+            }
+            else if (a <= b){
+                document.getElementById("res").textContent="Guess a lesser number!";
+            }
+            else{
+                document.getElementById("res").textContent="Invalid Input!";
+            }
+            document.getElementById("tries").textContent=count++;
+        }
+    </script>
+    
+</body>
+</html>
